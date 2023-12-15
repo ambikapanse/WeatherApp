@@ -15,7 +15,6 @@ class Operations
   late String description;
   late String main;
   late String humidity;
-  late String pressure;
   late String icon;
 
 
@@ -27,7 +26,6 @@ class Operations
     Map tempData = data['main'];
     double getTemp = tempData['temp'] - 273.15;
     String getHumidity = tempData['humidity'].toString();
-    String getPressure = tempData['pressure'].toString();
 
     Map wind = data['wind'];
     double getWindSpeed = wind['speed'].toDouble()/0.27777777777778;
@@ -40,7 +38,6 @@ class Operations
 
     temp = getTemp.toString();
     humidity = getHumidity;
-    pressure = getPressure;
     windSpeed = getWindSpeed.toString();
     main = getMainDesc;
     description = getDesc;
@@ -50,7 +47,6 @@ class Operations
       //Values when Invalid City is Searched
       temp = "NA";
       humidity = "NA";
-      pressure = "NA";
       windSpeed = "NA";
       main = "NA";
       description = "NA";
